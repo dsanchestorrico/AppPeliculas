@@ -5,6 +5,7 @@ import PeliculaScreen from '../screens/PeliculaScreen';
 import PopularesScreen from '../screens/PopularesScreen';
 import HomeScreen from '../screens/HomeScreen';
 import RegistrarPelicula from '../screens/RegistrarPelicula';
+import DetailPelicula from '../components/DetailPelicula';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,7 @@ const StackNavigator = () => {
       <Stack.Screen name="PeliculaScreen" options={{title : "En Cine"}} component={ PeliculaScreen } />
       <Stack.Screen name="PopularesScreen" options={{title : "Populares"}} component={ PopularesScreen } />
       <Stack.Screen name="RegistrarPelicula" options={{title : "Nuevo"}} component={ RegistrarPelicula } />
+      <Stack.Screen name="DetailPelicula" options={{title : "Detail"}} component={ DetailPelicula } />
     </Stack.Navigator>
   );
 }

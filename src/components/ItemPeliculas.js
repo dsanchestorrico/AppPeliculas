@@ -1,16 +1,23 @@
 import React from 'react'
-
-import { View, Image, Text, StyleSheet } from 'react-native'
-
+import { View, Image, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
 const ItemPelicula = ({ item }) => {
+  
   return (
     <View style={styles.containerItem}>
-      <Image source={{ uri: item.image }} style={{ width: 100, height: 100 }} />
-      <View style={styles.infoItem}>
-        <Text style={styles.itemPeliculaTitulo}>{item.titulo}</Text>
-        <Text style={styles.itemPeliculaGenero}>{item.genero}</Text>
-      </View>
+      <TouchableOpacity
+        activeOpacity = {0.8}
+        onPress={() => {
+           console.log(item.id)
+           }}>
+        <Image
+          source={{ uri: item.image }}
+          style={{ width: 100, height: 100 }} />
+      </TouchableOpacity>
+        <View style={styles.infoItem}>
+          <Text style={styles.itemPeliculaTitulo}>{item.titulo}</Text>
+          <Text style={styles.itemPeliculaGenero}>{item.genero}</Text>
+        </View>
     </View>
   );
 };
