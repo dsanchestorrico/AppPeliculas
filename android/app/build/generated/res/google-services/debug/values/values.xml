@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">40814575683-o1jp6po2pbvsmnf7kfo8g9cu6lpp59su.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">40814575683</string>
+    <string name="google_api_key" translatable="false">AIzaSyBnZoK_Ff54G-W0Kcfvir0smyjqjYTHrwU</string>
+    <string name="google_app_id" translatable="false">1:40814575683:android:a508fa5afc4b8cad5214f6</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBnZoK_Ff54G-W0Kcfvir0smyjqjYTHrwU</string>
+    <string name="google_storage_bucket" translatable="false">app-peliculas-68532.appspot.com</string>
+    <string name="project_id" translatable="false">app-peliculas-68532</string>
+</resources>

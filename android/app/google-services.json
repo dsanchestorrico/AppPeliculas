@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "40814575683",
+    "project_id": "app-peliculas-68532",
+    "storage_bucket": "app-peliculas-68532.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:40814575683:android:a508fa5afc4b8cad5214f6",
+        "android_client_info": {
+          "package_name": "com.apppeliculas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "40814575683-o1jp6po2pbvsmnf7kfo8g9cu6lpp59su.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnZoK_Ff54G-W0Kcfvir0smyjqjYTHrwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "40814575683-o1jp6po2pbvsmnf7kfo8g9cu6lpp59su.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
