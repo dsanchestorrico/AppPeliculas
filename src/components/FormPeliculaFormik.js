@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import {
   View,
@@ -10,11 +10,12 @@ import {
   Keyboard
 } from 'react-native';
 
-import {Formik} from 'formik';
+import { Formik } from 'formik';
+import { Picker } from '@react-native-picker/picker';
 
 import * as Yup from 'yup';
 
-import {launchImageLibrary} from 'react-native-image-picker';
+import { launchImageLibrary } from 'react-native-image-picker';
 
 import storage from '@react-native-firebase/storage';
 import firestore from '@react-native-firebase/firestore';
@@ -27,12 +28,13 @@ const FormPeliculaFormik = (props) => {
 
   const { onClose } = props
 
+  const [enCine, setEnCine] = useState();
+  const [popular, setPopular] = useState();
+
   const FormPeliculaSchema = Yup.object().shape({
-    name: Yup.string().required('Campo Requerido'),
-    price: Yup.number()
-      .moreThan(0, 'Ingresar un valor mayor a Cero')
-      .required('Campo Requerido'),
-    //image: Yup.string().required('Campo Requerido'),
+    titulo: Yup.string().required('Campo Requerido'),
+    genero: Yup.string().required('Campo Requerido'),
+    descripcion: Yup.string().required('Campo Requerido')
   });
 
   const handleGallery = async () => {
@@ -49,6 +51,7 @@ const FormPeliculaFormik = (props) => {
   };
 
   const handleForm = values => {
+    console.log('SUBMIT')
     setIsLoading(true)
     referenceStorage
       .putFile(pathFile)
@@ -71,7 +74,8 @@ const FormPeliculaFormik = (props) => {
       .then(response => {
         Keyboard.dismiss()
         setIsLoading(false)
-        onClose()
+        // onClose()
+        console.log('props',props);
         console.log('guardado');
       })
       .catch(error => {
@@ -81,35 +85,62 @@ const FormPeliculaFormik = (props) => {
 
   return (
     <Formik
-      initialValues={{name: '', price: 0}}
+      initialValues={{ titulo: '', genero: '', descripcion: '', enCine: true, popular: true , image:''}}
       onSubmit={handleForm}
       validationSchema={FormPeliculaSchema}>
-      {({handleChange, handleSubmit, values, errors}) => (
+      {({ handleChange, handleSubmit, values, errors }) => (
         <View style={styles.containerForm}>
-          <Text>Nombre</Text>
+          <Text>Titulo</Text>
           <TextInput
             style={styles.inputText}
-            value={values.name}
-            onChangeText={handleChange('name')}
-            placeholder="Nombre"
+            value={values.titulo}
+            onChangeText={handleChange('titulo')}
+            placeholder="Titulo"
           />
-          {errors.name && (
-            <Text style={styles.messageError}>{errors.name}</Text>
+          {errors.titulo && (
+            <Text style={styles.messageError}>{errors.titulo}</Text>
           )}
-          <Text>Precio</Text>
+          <Text>Genero</Text>
           <TextInput
-            keyboardType="numeric"
             style={styles.inputText}
-            value={values.price}
-            onChangeText={handleChange('price')}
-            placeholder="Precio"
+            value={values.genero}
+            onChangeText={handleChange('genero')}
+            placeholder="Genero"
           />
-          {errors.price && (
-            <Text style={styles.messageError}>{errors.price}</Text>
+          {errors.genero && (
+            <Text style={styles.messageError}>{errors.genero}</Text>
           )}
+          <Text>Descripcion</Text>
+          <TextInput
+            style={styles.inputText}
+            value={values.descripcion}
+            onChangeText={handleChange('descripcion')}
+            placeholder="Descripcion"
+          />
+          {errors.descripcion && (
+            <Text style={styles.messageError}>{errors.descripcion}</Text>
+          )}
+          <Text>En cines</Text>
+          <Picker
+            selectedValue={enCine}
+            onValueChange={(itemValue, itemIndex) =>
+              setEnCine(itemValue)
+            }>
+            <Picker.Item label="Si" value="true" />
+            <Picker.Item label="No" value="false" />
+          </Picker>
+          <Text>Popular</Text>
+          <Picker
+            selectedValue={popular}
+            onValueChange={(itemValue, itemIndex) =>
+              setPopular(itemValue)
+            }>
+            <Picker.Item label="Si" value="true" />
+            <Picker.Item label="No" value="false" />
+          </Picker>
           <Text>Imagen</Text>
           <View style={styles.containerImage}>
-            <View style={{width: '75%'}}>
+            <View style={{ width: '75%' }}>
               <TextInput
                 style={styles.inputText}
                 value={fileName}
@@ -121,7 +152,7 @@ const FormPeliculaFormik = (props) => {
               )} */}
             </View>
             <Button
-              style={{width: '20%'}}
+              style={{ width: '20%' }}
               onPress={handleGallery}
               title="Image"
             />

@@ -5,7 +5,6 @@ import PeliculaScreen from '../screens/PeliculaScreen';
 import PopularesScreen from '../screens/PopularesScreen';
 import StackNavigator from './StackNavigator';
 import { colores } from '../theme/appTheme';
-import { Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();

@@ -39,6 +39,9 @@ com.apppeliculas.app-packaged_res-37 D:\REACTNATIVE\AppPeliculas\node_modules\@r
 com.apppeliculas.app-packaged_res-38 D:\REACTNATIVE\AppPeliculas\node_modules\@react-native-firebase\firestore\android\build\intermediates\packaged_res\debug
 com.apppeliculas.app-packaged_res-39 D:\REACTNATIVE\AppPeliculas\node_modules\@react-native-firebase\storage\android\build\intermediates\packaged_res\debug
 com.apppeliculas.app-packaged_res-40 D:\REACTNATIVE\AppPeliculas\node_modules\@react-native-masked-view\masked-view\android\build\intermediates\packaged_res\debug
-com.apppeliculas.app-packaged_res-41 D:\REACTNATIVE\AppPeliculas\node_modules\react-native-gesture-handler\android\build\intermediates\packaged_res\debug
-com.apppeliculas.app-packaged_res-42 D:\REACTNATIVE\AppPeliculas\node_modules\react-native-safe-area-context\android\build\intermediates\packaged_res\debug
-com.apppeliculas.app-packaged_res-43 D:\REACTNATIVE\AppPeliculas\node_modules\react-native-screens\android\build\intermediates\packaged_res\debug
+com.apppeliculas.app-packaged_res-41 D:\REACTNATIVE\AppPeliculas\node_modules\@react-native-picker\picker\android\build\intermediates\packaged_res\debug
+com.apppeliculas.app-packaged_res-42 D:\REACTNATIVE\AppPeliculas\node_modules\react-native-gesture-handler\android\build\intermediates\packaged_res\debug
+com.apppeliculas.app-packaged_res-43 D:\REACTNATIVE\AppPeliculas\node_modules\react-native-image-picker\android\build\intermediates\packaged_res\debug
+com.apppeliculas.app-packaged_res-44 D:\REACTNATIVE\AppPeliculas\node_modules\react-native-safe-area-context\android\build\intermediates\packaged_res\debug
+com.apppeliculas.app-packaged_res-45 D:\REACTNATIVE\AppPeliculas\node_modules\react-native-screens\android\build\intermediates\packaged_res\debug
+com.apppeliculas.app-packaged_res-46 D:\REACTNATIVE\AppPeliculas\node_modules\react-native-vector-icons\android\build\intermediates\packaged_res\debug

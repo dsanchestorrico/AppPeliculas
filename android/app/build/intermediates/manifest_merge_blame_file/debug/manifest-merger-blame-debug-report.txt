@@ -120,82 +120,99 @@
 66-->[:react-native-firebase_app] D:\REACTNATIVE\AppPeliculas\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:28:13-37
 67            android:initOrder="99" />
 67-->[:react-native-firebase_app] D:\REACTNATIVE\AppPeliculas\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:13-35
-68
-69        <activity
-69-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:23:9-27:75
-70            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-70-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:24:13-93
-71            android:excludeFromRecents="true"
-71-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:25:13-46
-72            android:exported="false"
-72-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:26:13-37
-73            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-73-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:27:13-72
-74        <!--
-75            Service handling Google Sign-In user revocation. For apps that do not integrate with
-76            Google Sign-In, this service will never be started.
-77        -->
-78        <service
-78-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:33:9-37:51
-79            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-79-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:34:13-89
-80            android:exported="true"
-80-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:35:13-36
-81            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-81-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:36:13-107
-82            android:visibleToInstantApps="true" />
-82-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:37:13-48
-83
-84        <activity
-84-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\43a47f35034419d56527adc8180d3679\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-85            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-85-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\43a47f35034419d56527adc8180d3679\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-86            android:exported="false"
-86-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\43a47f35034419d56527adc8180d3679\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-87            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-87-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\43a47f35034419d56527adc8180d3679\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
-88
-89        <provider
-89-->[com.google.firebase:firebase-common:20.1.2] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\71553b43e410d7523000636cec936ad6\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:26:9-31:39
-90            android:name="com.google.firebase.provider.FirebaseInitProvider"
-90-->[com.google.firebase:firebase-common:20.1.2] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\71553b43e410d7523000636cec936ad6\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:27:13-77
-91            android:authorities="com.apppeliculas.firebaseinitprovider"
-91-->[com.google.firebase:firebase-common:20.1.2] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\71553b43e410d7523000636cec936ad6\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:28:13-72
-92            android:directBootAware="true"
-92-->[com.google.firebase:firebase-common:20.1.2] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\71553b43e410d7523000636cec936ad6\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:29:13-43
-93            android:exported="false"
-93-->[com.google.firebase:firebase-common:20.1.2] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\71553b43e410d7523000636cec936ad6\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:30:13-37
-94            android:initOrder="100" />
-94-->[com.google.firebase:firebase-common:20.1.2] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\71553b43e410d7523000636cec936ad6\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:31:13-36
-95
-96        <meta-data
-96-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\47b0a75a35b9d53b43a810f4bc8a2582\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
-97            android:name="com.google.android.gms.version"
-97-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\47b0a75a35b9d53b43a810f4bc8a2582\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
-98            android:value="@integer/google_play_services_version" />
-98-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\47b0a75a35b9d53b43a810f4bc8a2582\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
-99
-100        <provider
-100-->[androidx.emoji2:emoji2:1.0.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\97bc83f13aff2563f29b3d7c47622736\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-101            android:name="androidx.startup.InitializationProvider"
-101-->[androidx.emoji2:emoji2:1.0.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\97bc83f13aff2563f29b3d7c47622736\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
-102            android:authorities="com.apppeliculas.androidx-startup"
-102-->[androidx.emoji2:emoji2:1.0.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\97bc83f13aff2563f29b3d7c47622736\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
-103            android:exported="false" >
-103-->[androidx.emoji2:emoji2:1.0.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\97bc83f13aff2563f29b3d7c47622736\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
-104            <meta-data
-104-->[androidx.emoji2:emoji2:1.0.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\97bc83f13aff2563f29b3d7c47622736\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-105                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-105-->[androidx.emoji2:emoji2:1.0.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\97bc83f13aff2563f29b3d7c47622736\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
-106                android:value="androidx.startup" />
-106-->[androidx.emoji2:emoji2:1.0.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\97bc83f13aff2563f29b3d7c47622736\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
-107            <meta-data
-107-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\d11c85b860290b9cde7acec14be46a2f\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-108                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-108-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\d11c85b860290b9cde7acec14be46a2f\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-109                android:value="androidx.startup" />
-109-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\d11c85b860290b9cde7acec14be46a2f\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-110        </provider>
-111    </application>
-112
-113</manifest>
+68        <provider
+68-->[:react-native-image-picker] D:\REACTNATIVE\AppPeliculas\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+69            android:name="com.imagepicker.ImagePickerProvider"
+69-->[:react-native-image-picker] D:\REACTNATIVE\AppPeliculas\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-63
+70            android:authorities="com.apppeliculas.imagepickerprovider"
+70-->[:react-native-image-picker] D:\REACTNATIVE\AppPeliculas\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-71
+71            android:exported="false"
+71-->[:react-native-image-picker] D:\REACTNATIVE\AppPeliculas\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+72            android:grantUriPermissions="true" >
+72-->[:react-native-image-picker] D:\REACTNATIVE\AppPeliculas\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+73            <meta-data
+73-->[:react-native-image-picker] D:\REACTNATIVE\AppPeliculas\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:70
+74                android:name="android.support.FILE_PROVIDER_PATHS"
+74-->[:react-native-image-picker] D:\REACTNATIVE\AppPeliculas\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+75                android:resource="@xml/imagepicker_provider_paths" />
+75-->[:react-native-image-picker] D:\REACTNATIVE\AppPeliculas\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
+76        </provider>
+77
+78        <activity
+78-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:23:9-27:75
+79            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+79-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:24:13-93
+80            android:excludeFromRecents="true"
+80-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:25:13-46
+81            android:exported="false"
+81-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:26:13-37
+82            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+82-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:27:13-72
+83        <!--
+84            Service handling Google Sign-In user revocation. For apps that do not integrate with
+85            Google Sign-In, this service will never be started.
+86        -->
+87        <service
+87-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:33:9-37:51
+88            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+88-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:34:13-89
+89            android:exported="true"
+89-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:35:13-36
+90            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+90-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:36:13-107
+91            android:visibleToInstantApps="true" />
+91-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\750928b5e5c17b1e3fffc3d09843a966\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:37:13-48
+92
+93        <activity
+93-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\43a47f35034419d56527adc8180d3679\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+94            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+94-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\43a47f35034419d56527adc8180d3679\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+95            android:exported="false"
+95-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\43a47f35034419d56527adc8180d3679\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+96            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+96-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\43a47f35034419d56527adc8180d3679\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+97
+98        <provider
+98-->[com.google.firebase:firebase-common:20.1.2] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\71553b43e410d7523000636cec936ad6\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:26:9-31:39
+99            android:name="com.google.firebase.provider.FirebaseInitProvider"
+99-->[com.google.firebase:firebase-common:20.1.2] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\71553b43e410d7523000636cec936ad6\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:27:13-77
+100            android:authorities="com.apppeliculas.firebaseinitprovider"
+100-->[com.google.firebase:firebase-common:20.1.2] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\71553b43e410d7523000636cec936ad6\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:28:13-72
+101            android:directBootAware="true"
+101-->[com.google.firebase:firebase-common:20.1.2] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\71553b43e410d7523000636cec936ad6\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:29:13-43
+102            android:exported="false"
+102-->[com.google.firebase:firebase-common:20.1.2] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\71553b43e410d7523000636cec936ad6\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:30:13-37
+103            android:initOrder="100" />
+103-->[com.google.firebase:firebase-common:20.1.2] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\71553b43e410d7523000636cec936ad6\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:31:13-36
+104
+105        <meta-data
+105-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\47b0a75a35b9d53b43a810f4bc8a2582\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+106            android:name="com.google.android.gms.version"
+106-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\47b0a75a35b9d53b43a810f4bc8a2582\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+107            android:value="@integer/google_play_services_version" />
+107-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\47b0a75a35b9d53b43a810f4bc8a2582\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+108
+109        <provider
+109-->[androidx.emoji2:emoji2:1.0.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\97bc83f13aff2563f29b3d7c47622736\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+110            android:name="androidx.startup.InitializationProvider"
+110-->[androidx.emoji2:emoji2:1.0.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\97bc83f13aff2563f29b3d7c47622736\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+111            android:authorities="com.apppeliculas.androidx-startup"
+111-->[androidx.emoji2:emoji2:1.0.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\97bc83f13aff2563f29b3d7c47622736\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+112            android:exported="false" >
+112-->[androidx.emoji2:emoji2:1.0.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\97bc83f13aff2563f29b3d7c47622736\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+113            <meta-data
+113-->[androidx.emoji2:emoji2:1.0.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\97bc83f13aff2563f29b3d7c47622736\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+114                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+114-->[androidx.emoji2:emoji2:1.0.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\97bc83f13aff2563f29b3d7c47622736\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+115                android:value="androidx.startup" />
+115-->[androidx.emoji2:emoji2:1.0.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\97bc83f13aff2563f29b3d7c47622736\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+116            <meta-data
+116-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\d11c85b860290b9cde7acec14be46a2f\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+117                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+117-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\d11c85b860290b9cde7acec14be46a2f\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+118                android:value="androidx.startup" />
+118-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\daniel.sanchez\.gradle\caches\transforms-3\d11c85b860290b9cde7acec14be46a2f\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+119        </provider>
+120    </application>
+121
+122</manifest>

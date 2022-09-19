@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const colores = {
     primary: '#5856D6',
-    
+
 }
 
 export const style = StyleSheet.create({
@@ -12,7 +12,7 @@ export const style = StyleSheet.create({
         alignItems:'center'
     },
     botonGrande:{
-        width:100,
+        width:250,
         height:100,
         backgroundColor:'orange',
         borderRadius:20,
