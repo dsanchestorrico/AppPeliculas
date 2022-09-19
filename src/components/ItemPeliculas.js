@@ -3,12 +3,14 @@ import React from 'react'
 import { View, Image, Text, StyleSheet } from 'react-native'
 
 
-const ItemPelicula = ({item}) => {
+const ItemPelicula = ({ item }) => {
   return (
     <View style={styles.containerItem}>
-      <Image source={{uri: item.image}} style={{width: 100, height: 100}} />
-      <Text style={styles.itemPeliculaTitulo}>{item.titulo}</Text>
-      <Text style={styles.itemPeliculaGenero}>{item.genero}</Text>
+      <Image source={{ uri: item.image }} style={{ width: 100, height: 100 }} />
+      <View style={styles.infoItem}>
+        <Text style={styles.itemPeliculaTitulo}>{item.titulo}</Text>
+        <Text style={styles.itemPeliculaGenero}>{item.genero}</Text>
+      </View>
     </View>
   );
 };
@@ -37,8 +39,15 @@ const styles = StyleSheet.create({
     margin: 10,
     elevation: 5,
     borderRadius: 5,
-    justifyContent: 'space-between',
-    alignItems: 'center'
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start'
+  },
+  infoItem: {
+    flexDirection: 'column',
+    padding: 10,
+    justifyContent: 'flex-start',
+    backgroundColor: 'white',
+    alignItems: 'flex-start'
   },
   itemPeliculaTitulo: {
     fontSize: 20,
