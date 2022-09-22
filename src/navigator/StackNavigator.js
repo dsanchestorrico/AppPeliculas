@@ -7,6 +7,7 @@ import HomeScreen from '../screens/HomeScreen';
 import RegistrarPelicula from '../screens/RegistrarPelicula';
 import DetailPelicula from '../components/DetailPelicula';
 import { InitialScreen } from '../screens/InitialScreen';
+import { DetailScreen } from '../screens/DetailScreen';
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,7 @@ const StackNavigator = () => {
       <Stack.Screen name="PopularesScreen" options={{title : "Populares"}} component={ PopularesScreen } />
       <Stack.Screen name="RegistrarPelicula" options={{title : "Nuevo"}} component={ RegistrarPelicula } />
       <Stack.Screen name="DetailPelicula" options={{title : "Detail"}} component={ DetailPelicula } />
+      <Stack.Screen name="DetailScreen" options={{title : "Detail"}} component={ DetailScreen } />
     </Stack.Navigator>
   );
 }
