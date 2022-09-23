@@ -3,13 +3,13 @@ import { FlatList, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { MovieItem } from './MovieItem';
 import { style } from '../theme/appTheme';
 
-export const VerticalSlider = ({ titleScreen, listMovies }) => {
+export const VerticalSlider = ({ titleScreen, listMovies , buttonFavorite }) => {
     return (
             <SafeAreaView style={{ marginLeft: 10, marginRight: 10 }}>
                 <Text style={style.titleScreen}>{titleScreen}</Text>
                 <FlatList
                     data={listMovies}
-                    renderItem={(movie) => <MovieItem movieItem={movie} />}
+                    renderItem={(movie) => <MovieItem movieItem={movie} buttonFavorite={buttonFavorite}/>}
                     keyExtractor={(item, index) => String(index)}
                 />
             </SafeAreaView>

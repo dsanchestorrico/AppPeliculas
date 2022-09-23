@@ -5,7 +5,7 @@ import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'r
 import Icon from 'react-native-vector-icons/Ionicons';
 import firestore from '@react-native-firebase/firestore';
 
-export const MovieItem = ({ movieItem }) => {
+export const MovieItem = ({ movieItem , buttonFavorite}) => {
     const movie = movieItem.item;
     const posterUri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
@@ -17,7 +17,19 @@ export const MovieItem = ({ movieItem }) => {
             .doc(id)
             .delete()
             .then(() => {
-                console.log('Movie deleted!',id);
+                console.log('Movie deleted!', id);
+            });
+    };
+
+    const updatedMovieItem = (id) => {
+        firestore()
+            .collection('movies')
+            .doc(id)
+            .update({
+                type: 'favorites',
+            })
+            .then(() => {
+                console.log('User updated!');
             });
     };
 
@@ -43,6 +55,8 @@ export const MovieItem = ({ movieItem }) => {
                 <IconButton
                     icon={props => <Icon name="star-outline" {...props} />}
                     color="primary"
+                    onPress={() => {updatedMovieItem(movie.idFirestore)}}
+                    style={{display:buttonFavorite}}
                 />
             </View>
         </SafeAreaView>

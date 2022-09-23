@@ -25,7 +25,7 @@ export const MyFavoritesMoviesScreen = () => {
     return (
         <ScrollView style={{backgroundColor:'white'}}>
             <SafeAreaView>
-                <VerticalSlider titleScreen={'My Favorites Movies'} listMovies={movies} />
+                <VerticalSlider titleScreen={'My Favorites Movies'} listMovies={movies} buttonFavorite={'none'} />
             </SafeAreaView>
         </ScrollView>
     )
