@@ -34,8 +34,8 @@ const PosterPelicula = ({ item, height = 500, width = 300 }) => {
 const styles = StyleSheet.create({
     image: {
         flex: 1,
-        borderRadius: 18
-
+        borderRadius: 18,
+        resizeMode: 'stretch'
     },
     imageContainer: {
         flex: 1,

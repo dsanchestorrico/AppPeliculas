@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, Image, StyleSheet, ScrollView } from 'react-native'
+import { Button, IconButton } from "@react-native-material/core";
 import Icon from 'react-native-vector-icons/Ionicons';
 import PeliculaBD from '../api/PeliculaBD';
 import { HorizontalSlider } from '../components/HorizontalSlider';
@@ -9,23 +10,23 @@ export const DetailScreen = (props) => {
     const { poster_path } = pelicula;
     const uri = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
-    const [ peliculasSimilares, setPeliculasSimilares ] = useState([]);
-    const [ generos, setGeneros ] = useState([]);
+    const [peliculasSimilares, setPeliculasSimilares] = useState([]);
+    const [generos, setGeneros] = useState([]);
 
-    const getPeliculasSimilares = async () =>{
-        await  PeliculaBD.get(`/${pelicula.id}/similar`)
-        .then((response)=>{
-            setPeliculasSimilares(response.data.results)
-        })
-        
+    const getPeliculasSimilares = async () => {
+        await PeliculaBD.get(`/${pelicula.id}/similar`)
+            .then((response) => {
+                setPeliculasSimilares(response.data.results)
+            })
+
     };
 
-    const getGeneros = async () =>{
-        await  PeliculaBD.get(`/${pelicula.id}`)
-        .then((response)=>{
-            setGeneros(response.data.genres);
-        })
-        
+    const getGeneros = async () => {
+        await PeliculaBD.get(`/${pelicula.id}`)
+            .then((response) => {
+                setGeneros(response.data.genres);
+            })
+
     };
 
     useEffect(() => {
@@ -46,19 +47,26 @@ export const DetailScreen = (props) => {
             <View>
                 <Text style={styles.originalTitle}>{pelicula.original_title}</Text>
                 <Text style={styles.title}>{pelicula.title}</Text>
-                <View style={{flexDirection:'row', marginTop:5}}>
+                <View style={{ flexDirection: 'row', marginTop: 5 }}>
                     <Icon
                         name='star-outline'
                         color='gray'
                         size={20}
 
                     />
-                    <Text style={{marginLeft:10, fontSize: 18}}>{pelicula.vote_average}</Text>
-                    <Text style={{marginLeft:10, fontSize: 18}}>- {generos.map(g => g.name).join(', ')}</Text>
+                    <Text style={{ marginLeft: 10, fontSize: 18 }}>{pelicula.vote_average}</Text>
+                    <Text style={{ marginLeft: 10, fontSize: 18 }}>- {generos.map(g => g.name).join(', ')}</Text>
                 </View>
                 <Text style={styles.overview}>{pelicula.overview}</Text>
             </View>
-            <HorizontalSlider titulo={'Peliculas Similares'} peliculasEnCine = {peliculasSimilares}/>
+            <HorizontalSlider titulo={'Peliculas Similares'} peliculasEnCine={peliculasSimilares} />
+            <View style={styles.botones}>
+                <Button title="A MI LISTA" onPress={() => console.log('agregar a mi lista')} />
+            </View>
+
+            <View style={styles.botones}>
+                <Button title="A Mis Favoritos" onPress={() => console.log('ver mas tarde')} />
+            </View>
 
         </ScrollView>
     )
@@ -80,8 +88,11 @@ const styles = StyleSheet.create({
     overview: {
         fontSize: 18,
         textAlign: 'justify',
-        marginTop:5,
-        marginBottom:15
+        marginTop: 5,
+        marginBottom: 15
+    },
+    botones: {
+        margin: 10
     }
 
 })

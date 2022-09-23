@@ -10,6 +10,7 @@ export const HorizontalSlider = ({ titulo, peliculasEnCine }) => {
                 data={peliculasEnCine}
                 renderItem={(pelicula) => <PosterPelicula item={pelicula} height={200} width={140} />}
                 keyExtractor={(item, index) => String(index)}
+                initialNumToRender={7}
                 horizontal={true}
             />
         </View>

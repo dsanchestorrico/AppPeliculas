@@ -25,6 +25,7 @@ export const InitialScreen = () => {
                     data={nowPlaying}
                     renderItem={(pelicula) => <PosterPelicula item={pelicula}/>}
                     sliderWidth={windowWidth}
+                    initialNumToRender={7}
                     itemWidth={300} />
 
             </View>

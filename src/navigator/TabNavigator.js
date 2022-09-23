@@ -1,14 +1,15 @@
 import React from 'react';
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
 import PeliculaScreen from '../screens/PeliculaScreen';
 import PopularesScreen from '../screens/PopularesScreen';
 import StackNavigator from './StackNavigator';
-import { colores } from '../theme/appTheme';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const Tab = createBottomTabNavigator();
-
+// const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 const TabNavigator = () => {
     return (
         <Tab.Navigator
@@ -17,8 +18,7 @@ const TabNavigator = () => {
             }}
             screenOptions={(props) => ({
                 tabBarIcon: ({ color, focused, size }) => {
-                    // console.log(props.route.name)
-                    let route =props.route;
+                    let route = props.route;
                     let icono = '';
                     switch (route.name) {
                         case 'StackNavigator':
@@ -31,15 +31,19 @@ const TabNavigator = () => {
                             icono = 'star-outline';
                             break;
                     }
-                    return <Icon name={icono} size={20} color={colores.primary} />
+                    return <Icon name={icono} size={focused ? 26 : 20} color={color} />
 
                 }
 
 
-            })}>
-            <Tab.Screen name="StackNavigator" options={{ title: "Home" }} component={StackNavigator} />
-            <Tab.Screen name="PeliculaScreen" options={{ title: "En Cine" }} component={PeliculaScreen} />
-            <Tab.Screen name="PopularesScreen" options={{ title: "Populares" }} component={PopularesScreen} />
+            })}
+            barStyle={{ backgroundColor: '#694fad', height: 70 }}
+            activeColor="#f0edf6"
+            inactiveColor="#3e2465"
+        >
+            <Tab.Screen name="StackNavigator" options={{ title: "Inicio"}} component={StackNavigator} />
+            <Tab.Screen name="PeliculaScreen" options={{ title: "Mi Lista"}} component={PeliculaScreen} />
+            <Tab.Screen name="PopularesScreen" options={{ title: "Mis Favoritos"}} component={PopularesScreen} />
         </Tab.Navigator>
     );
 }
