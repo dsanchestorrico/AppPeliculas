@@ -1,14 +1,12 @@
 import React from 'react';
 
-// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
-import PeliculaScreen from '../screens/PeliculaScreen';
-import PopularesScreen from '../screens/PopularesScreen';
+import {MyMovieScreen} from '../screens/MyMovieScreen';
 import StackNavigator from './StackNavigator';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { MyFavoritesMoviesScreen } from '../screens/MyFavoritesMoviesScreen';
 
-// const Tab = createBottomTabNavigator();
 const Tab = createMaterialBottomTabNavigator();
 const TabNavigator = () => {
     return (
@@ -24,10 +22,10 @@ const TabNavigator = () => {
                         case 'StackNavigator':
                             icono = 'home-outline';
                             break;
-                        case 'PeliculaScreen':
+                        case 'MyMovieScreen':
                             icono = 'list-outline';
                             break;
-                        case 'PopularesScreen':
+                        case 'MyFavoritesMoviesScreen':
                             icono = 'star-outline';
                             break;
                     }
@@ -37,13 +35,13 @@ const TabNavigator = () => {
 
 
             })}
-            barStyle={{ backgroundColor: '#694fad', height: 70 }}
+            barStyle={{ backgroundColor: '#694fad'}}
             activeColor="#f0edf6"
             inactiveColor="#3e2465"
         >
-            <Tab.Screen name="StackNavigator" options={{ title: "Inicio"}} component={StackNavigator} />
-            <Tab.Screen name="PeliculaScreen" options={{ title: "Mi Lista"}} component={PeliculaScreen} />
-            <Tab.Screen name="PopularesScreen" options={{ title: "Mis Favoritos"}} component={PopularesScreen} />
+            <Tab.Screen name="StackNavigator" options={{ title: "Home"}} component={StackNavigator} />
+            <Tab.Screen name="MyMovieScreen" options={{ title: "My PlayList"}} component={MyMovieScreen} />
+            <Tab.Screen name="MyFavoritesMoviesScreen" options={{ title: "My Favorites"}} component={MyFavoritesMoviesScreen} />
         </Tab.Navigator>
     );
 }

@@ -4,10 +4,7 @@ import storage from '@react-native-firebase/storage';
 import ItemPeliculas from '../components/ItemPeliculas';
 
 import {
-  Button,
-  View,
   FlatList,
-  Text,
   SafeAreaView
 } from 'react-native';
 

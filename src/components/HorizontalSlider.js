@@ -1,11 +1,12 @@
 import React from 'react'
 import { View, Text, StyleSheet, FlatList } from 'react-native'
 import PosterPelicula from './PosterPelicula'
+import { style } from '../theme/appTheme';
 
 export const HorizontalSlider = ({ titulo, peliculasEnCine }) => {
     return (
         <View style={{ height: 250 , marginLeft:10, marginRight: 10}}>
-            <Text style={styles.subtitulo}>{titulo}</Text>
+            <Text style={style.titleScreen}>{titulo}</Text>
             <FlatList
                 data={peliculasEnCine}
                 renderItem={(pelicula) => <PosterPelicula item={pelicula} height={200} width={140} />}
@@ -17,11 +18,3 @@ export const HorizontalSlider = ({ titulo, peliculasEnCine }) => {
     )
 }
 
-const styles = StyleSheet.create({
-    subtitulo: {
-        color: 'black',
-        fontWeight: 'bold',
-        fontSize: 15,
-        marginLeft: 5
-      },
-});

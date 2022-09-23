@@ -8,6 +8,8 @@ import RegistrarPelicula from '../screens/RegistrarPelicula';
 import DetailPelicula from '../components/DetailPelicula';
 import { InitialScreen } from '../screens/InitialScreen';
 import { DetailScreen } from '../screens/DetailScreen';
+import { MyMovieScreen } from '../screens/MyMovieScreen';
+import { MyFavoritesMoviesScreen } from '../screens/MyFavoritesMoviesScreen';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +27,8 @@ const StackNavigator = () => {
       }}
     >
       <Stack.Screen name="InitialScreen" options={{title : ""}} component={ InitialScreen } />
+      <Stack.Screen name="MyMovieScreen" options={{title : ""}} component={ MyMovieScreen } />
+      <Stack.Screen name="MyFavoritesMoviesScreen" options={{title : ""}} component={ MyFavoritesMoviesScreen } />
       <Stack.Screen name="HomeScreen" options={{title : ""}} component={ HomeScreen } />
       <Stack.Screen name="PeliculaScreen" options={{title : "En Cine"}} component={ PeliculaScreen } />
       <Stack.Screen name="PopularesScreen" options={{title : "Populares"}} component={ PopularesScreen } />

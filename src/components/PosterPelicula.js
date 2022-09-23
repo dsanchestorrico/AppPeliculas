@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 
 const PosterPelicula = ({ item, height = 500, width = 300 }) => {
 
@@ -11,7 +11,7 @@ const PosterPelicula = ({ item, height = 500, width = 300 }) => {
     // console.log(poster_path)
     return (
         <TouchableOpacity
-            onPress = {() => {navigation.navigate('DetailScreen', item.item)}}
+            onPress = {() => {navigation.navigate('DetailScreen', {...item.item, showButton:'flex'})}}
             activeOpacity = {0.8}
             style={{
                 width: width,

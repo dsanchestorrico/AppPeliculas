@@ -1,21 +1,22 @@
 import React from 'react'
-import { Dimensions, ScrollView, View } from 'react-native'
+import { Dimensions, ScrollView, Text, View } from 'react-native'
 
 import Carousel from 'react-native-snap-carousel';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 
 import PosterPelicula from '../components/PosterPelicula';
-import { usePelicula } from '../hooks/usePelicula'
+import { usePelicula } from '../hooks/usePelicula';
+import { style } from '../theme/appTheme';
 
 const { width: windowWidth } = Dimensions.get('window');
 
 export const InitialScreen = () => {
 
     const {nowPlaying, popular, topRated, upcoming} = usePelicula();
-    // const item = peliculasEnCine[2];
 
     return (
         <ScrollView>
+            <Text style={style.titleScreen}>IS NOW PLAYING</Text>
             <View
                 style={{
                     height: 520

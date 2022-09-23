@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, Image, StyleSheet, ScrollView } from 'react-native'
-import { Button, IconButton } from "@react-native-material/core";
+import { View, Text, Image, StyleSheet, ScrollView, Alert } from 'react-native'
+import { Button } from "@react-native-material/core";
 import Icon from 'react-native-vector-icons/Ionicons';
 import PeliculaBD from '../api/PeliculaBD';
 import { HorizontalSlider } from '../components/HorizontalSlider';
+import firestore from '@react-native-firebase/firestore';
 
 export const DetailScreen = (props) => {
     const pelicula = props.route.params
-    const { poster_path } = pelicula;
+    const { poster_path, showButton } = pelicula;
+
     const uri = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
     const [peliculasSimilares, setPeliculasSimilares] = useState([]);
@@ -28,6 +30,54 @@ export const DetailScreen = (props) => {
             })
 
     };
+
+    const sendData = (values) => {
+        firestore()
+            .collection('movies')
+            .add({
+                ...values
+            })
+            .then(response => {
+                                
+            })
+            .catch(error => {
+                console.log('error', error);
+            });
+    };
+
+    const confirmationMyListAlert = () =>
+        Alert.alert(
+            `¿Desea agregar "${pelicula.title}" a su lista?`,
+            "",
+            [
+                {
+                    text: "Cancel",
+                    onPress: () => {console.log('cancel')},
+                    style: "cancel"
+                },
+                { text: "OK", onPress: () => {
+                    sendData({...pelicula, type:'mylist'});  
+                    console.log('added!')                  
+                }}
+            ]
+        );
+
+    const confirmationMyFavoriteAlert = () =>
+        Alert.alert(
+            `¿Desea agregar "${pelicula.title}" a sus favoritos?`,
+            "",
+            [
+                {
+                    text: "Cancel",
+                    onPress: () => {console.log('cancel')},
+                    style: "cancel"
+                },
+                { text: "OK", onPress: () => {
+                    sendData({...pelicula, type:'favorites'});  
+                    console.log('added!')                  
+                }}
+            ]
+        );
 
     useEffect(() => {
         getPeliculasSimilares()
@@ -60,12 +110,13 @@ export const DetailScreen = (props) => {
                 <Text style={styles.overview}>{pelicula.overview}</Text>
             </View>
             <HorizontalSlider titulo={'Peliculas Similares'} peliculasEnCine={peliculasSimilares} />
-            <View style={styles.botones}>
-                <Button title="A MI LISTA" onPress={() => console.log('agregar a mi lista')} />
+            <View style={{...styles.botones, display: showButton}}>
+                <Button title="A MI LISTA" onPress={confirmationMyListAlert}
+                />
             </View>
 
-            <View style={styles.botones}>
-                <Button title="A Mis Favoritos" onPress={() => console.log('ver mas tarde')} />
+            <View style={{...styles.botones, display: showButton}}>
+                <Button title="A Mis Favoritos" onPress={confirmationMyFavoriteAlert} />
             </View>
 
         </ScrollView>
