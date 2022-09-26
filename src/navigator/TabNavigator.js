@@ -6,6 +6,7 @@ import {MyMovieScreen} from '../screens/MyMovieScreen';
 import StackNavigator from './StackNavigator';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { MyFavoritesMoviesScreen } from '../screens/MyFavoritesMoviesScreen';
+import { SearchMovieScreen } from '../screens/SearchMovieScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 const TabNavigator = () => {
@@ -21,6 +22,9 @@ const TabNavigator = () => {
                     switch (route.name) {
                         case 'StackNavigator':
                             icono = 'home-outline';
+                            break;
+                        case 'SearchMovieScreen':
+                            icono = 'search-outline';
                             break;
                         case 'MyMovieScreen':
                             icono = 'list-outline';
@@ -40,6 +44,7 @@ const TabNavigator = () => {
             inactiveColor="#3e2465"
         >
             <Tab.Screen name="StackNavigator" options={{ title: "Home"}} component={StackNavigator} />
+            <Tab.Screen name="SearchMovieScreen" options={{ title: "Search"}} component={SearchMovieScreen} />
             <Tab.Screen name="MyMovieScreen" options={{ title: "My PlayList"}} component={MyMovieScreen} />
             <Tab.Screen name="MyFavoritesMoviesScreen" options={{ title: "My Favorites"}} component={MyFavoritesMoviesScreen} />
         </Tab.Navigator>

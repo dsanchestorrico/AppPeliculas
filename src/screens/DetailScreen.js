@@ -5,6 +5,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import PeliculaBD from '../api/PeliculaBD';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 import firestore from '@react-native-firebase/firestore';
+import { style } from '../theme/appTheme';
+import { black } from 'react-native-paper/lib/typescript/styles/colors';
 
 export const DetailScreen = (props) => {
     const pelicula = props.route.params
@@ -38,7 +40,7 @@ export const DetailScreen = (props) => {
                 ...values
             })
             .then(response => {
-                                
+
             })
             .catch(error => {
                 console.log('error', error);
@@ -52,13 +54,15 @@ export const DetailScreen = (props) => {
             [
                 {
                     text: "Cancel",
-                    onPress: () => {console.log('cancel')},
+                    onPress: () => { console.log('cancel') },
                     style: "cancel"
                 },
-                { text: "OK", onPress: () => {
-                    sendData({...pelicula, type:'mylist'});  
-                    console.log('added!')                  
-                }}
+                {
+                    text: "OK", onPress: () => {
+                        sendData({ ...pelicula, type: 'mylist' });
+                        console.log('added!')
+                    }
+                }
             ]
         );
 
@@ -69,13 +73,15 @@ export const DetailScreen = (props) => {
             [
                 {
                     text: "Cancel",
-                    onPress: () => {console.log('cancel')},
+                    onPress: () => { console.log('cancel') },
                     style: "cancel"
                 },
-                { text: "OK", onPress: () => {
-                    sendData({...pelicula, type:'favorites'});  
-                    console.log('added!')                  
-                }}
+                {
+                    text: "OK", onPress: () => {
+                        sendData({ ...pelicula, type: 'favorites' });
+                        console.log('added!')
+                    }
+                }
             ]
         );
 
@@ -86,39 +92,43 @@ export const DetailScreen = (props) => {
 
 
     return (
-        <ScrollView style={{ margin: 15 }}>
-            <View style={styles.container}>
+        <ScrollView>
+            <View style={{ margin: 15 }}>
 
-                <Image
-                    source={{ uri }}
-                    style={{ flex: 1 }}
-                />
-            </View>
-            <View>
-                <Text style={styles.originalTitle}>{pelicula.original_title}</Text>
-                <Text style={styles.title}>{pelicula.title}</Text>
-                <View style={{ flexDirection: 'row', marginTop: 5 }}>
-                    <Icon
-                        name='star-outline'
-                        color='gray'
-                        size={20}
+                <View style={styles.container}>
 
+                    <Image
+                        source={{ uri }}
+                        style={{ flex: 1 }}
                     />
-                    <Text style={{ marginLeft: 10, fontSize: 18 }}>{pelicula.vote_average}</Text>
-                    <Text style={{ marginLeft: 10, fontSize: 18 }}>- {generos.map(g => g.name).join(', ')}</Text>
                 </View>
-                <Text style={styles.overview}>{pelicula.overview}</Text>
-            </View>
-            <HorizontalSlider titulo={'Peliculas Similares'} peliculasEnCine={peliculasSimilares} />
-            <View style={{...styles.botones, display: showButton}}>
-                <Button title="A MI LISTA" onPress={confirmationMyListAlert}
-                />
-            </View>
+                <View>
+                    <Text style={styles.originalTitle}>{pelicula.original_title}</Text>
+                    <Text style={styles.title}>{pelicula.title}</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 5 }}>
+                        <Icon
+                            name='star-outline'
+                            color='black'
+                            size={20}
 
-            <View style={{...styles.botones, display: showButton}}>
-                <Button title="A Mis Favoritos" onPress={confirmationMyFavoriteAlert} />
-            </View>
+                        />
+                        <Text style={{ marginLeft: 10, fontSize: 18 }}>{pelicula.vote_average}</Text>
+                        <Text style={{ marginLeft: 10, fontSize: 18 }}>- {generos.map(g => g.name).join(', ')}</Text>
+                    </View>
+                    <Text style={{...style.titleScreen, marginLeft:0}}>Historia</Text>
+                    <Text style={styles.overview}>{pelicula.overview}</Text>
+                </View>
+                <HorizontalSlider titulo={'Peliculas Similares'} peliculasEnCine={peliculasSimilares} />
+                <View style={{ ...styles.botones, display: showButton }}>
+                    <Button title="A MI LISTA" onPress={confirmationMyListAlert}
+                    />
+                </View>
 
+                <View style={{ ...styles.botones, display: showButton }}>
+                    <Button title="A Mis Favoritos" onPress={confirmationMyFavoriteAlert} />
+                </View>
+
+            </View>
         </ScrollView>
     )
 }
@@ -134,7 +144,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 22,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color:'black'
     },
     overview: {
         fontSize: 18,
