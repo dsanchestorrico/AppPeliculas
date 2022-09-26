@@ -30,7 +30,6 @@ export const useMovie = () => {
 
     useEffect(() => {
        getPeliculas();
-
     }, []);
 
     return (
