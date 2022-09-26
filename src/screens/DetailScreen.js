@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { View, Text, Image, StyleSheet, ScrollView, Alert } from 'react-native'
 import { Button } from "@react-native-material/core";
 import Icon from 'react-native-vector-icons/Ionicons';
-import PeliculaBD from '../api/PeliculaBD';
+import MovieDB from '../api/MovieDB';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 import firestore from '@react-native-firebase/firestore';
+import Container, { Toast } from 'toastify-react-native'
 import { style } from '../theme/appTheme';
-import { black } from 'react-native-paper/lib/typescript/styles/colors';
 
 export const DetailScreen = (props) => {
     const pelicula = props.route.params
@@ -18,7 +18,7 @@ export const DetailScreen = (props) => {
     const [generos, setGeneros] = useState([]);
 
     const getPeliculasSimilares = async () => {
-        await PeliculaBD.get(`/${pelicula.id}/similar`)
+        await MovieDB.get(`/${pelicula.id}/similar`)
             .then((response) => {
                 setPeliculasSimilares(response.data.results)
             })
@@ -26,7 +26,7 @@ export const DetailScreen = (props) => {
     };
 
     const getGeneros = async () => {
-        await PeliculaBD.get(`/${pelicula.id}`)
+        await MovieDB.get(`/${pelicula.id}`)
             .then((response) => {
                 setGeneros(response.data.genres);
             })
@@ -40,7 +40,7 @@ export const DetailScreen = (props) => {
                 ...values
             })
             .then(response => {
-
+                Toast.success('Agregado ...')
             })
             .catch(error => {
                 console.log('error', error);
@@ -53,12 +53,12 @@ export const DetailScreen = (props) => {
             "",
             [
                 {
-                    text: "Cancel",
+                    text: "Cancelar",
                     onPress: () => { console.log('cancel') },
                     style: "cancel"
                 },
                 {
-                    text: "OK", onPress: () => {
+                    text: "Agregar", onPress: () => {
                         sendData({ ...pelicula, type: 'mylist' });
                         console.log('added!')
                     }
@@ -115,19 +115,31 @@ export const DetailScreen = (props) => {
                         <Text style={{ marginLeft: 10, fontSize: 18 }}>{pelicula.vote_average}</Text>
                         <Text style={{ marginLeft: 10, fontSize: 18 }}>- {generos.map(g => g.name).join(', ')}</Text>
                     </View>
-                    <Text style={{...style.titleScreen, marginLeft:0}}>Historia</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 5 }}>
+                        <Icon
+                            name='calendar-outline'
+                            color='black'
+                            size={20}
+
+                        />
+                        <Text style={{ marginLeft: 10, fontSize: 18 }}>{pelicula.release_date}</Text>
+                    </View>
+                    <Text style={{ ...style.titleScreen, marginLeft: 0 }}>Historia</Text>
                     <Text style={styles.overview}>{pelicula.overview}</Text>
+                    <Text style={{ ...style.titleScreen, marginLeft: 0 }}>Mis opiniones</Text>
+                    <Text style={styles.overview}>{pelicula.review}</Text>
                 </View>
+
                 <HorizontalSlider titulo={'Peliculas Similares'} peliculasEnCine={peliculasSimilares} />
+
                 <View style={{ ...styles.botones, display: showButton }}>
                     <Button title="A MI LISTA" onPress={confirmationMyListAlert}
                     />
                 </View>
-
                 <View style={{ ...styles.botones, display: showButton }}>
                     <Button title="A Mis Favoritos" onPress={confirmationMyFavoriteAlert} />
                 </View>
-
+                <Container position="bottom" positionValue="-200" />
             </View>
         </ScrollView>
     )
@@ -145,7 +157,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 22,
         fontWeight: 'bold',
-        color:'black'
+        color: 'black'
     },
     overview: {
         fontSize: 18,

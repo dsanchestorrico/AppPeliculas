@@ -4,8 +4,10 @@ import { useNavigation } from '@react-navigation/native';
 import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import firestore from '@react-native-firebase/firestore';
+import { useState } from 'react';
+import prompt from 'react-native-prompt-android';
 
-export const MovieItem = ({ movieItem , buttonFavorite}) => {
+export const MovieItem = ({ movieItem, buttonFavorite }) => {
     const movie = movieItem.item;
     const posterUri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
@@ -21,17 +23,41 @@ export const MovieItem = ({ movieItem , buttonFavorite}) => {
             });
     };
 
-    const updatedMovieItem = (id) => {
+    const updatedMovieItem = (id, review) => {
         firestore()
             .collection('movies')
             .doc(id)
             .update({
                 type: 'favorites',
+                review: review
             })
             .then(() => {
                 console.log('User updated!');
             });
     };
+
+    const promptReview = (id) => {
+        prompt(
+            'Mi Revisión',
+            'Ingrese su opinion en referencia a la pelicula',
+            [
+                { text: 'Cancel', onPress: () => { }, style: 'cancel' },
+                {
+                    text: 'OK', onPress: review => {
+                        updatedMovieItem(id, review);
+                        console.log(id)
+                        console.log(review)
+                    }
+                },
+            ],
+            {
+                type: 'default',
+                cancelable: false,
+                defaultValue: '',
+                placeholder: ''
+            }
+        );
+    }
 
     return (
         <SafeAreaView style={styles.containerItem}>
@@ -53,10 +79,12 @@ export const MovieItem = ({ movieItem , buttonFavorite}) => {
                     onPress={() => { deleteMovieItem(movie.idFirestore) }}
                 />
                 <IconButton
-                    icon={props => <Icon name="star-outline" {...props} />}
+                    icon={props => <Icon name="chatbubbles-outline" {...props} />}
                     color="primary"
-                    onPress={() => {updatedMovieItem(movie.idFirestore)}}
-                    style={{display:buttonFavorite}}
+                    onPress={() => { 
+                        promptReview(movie.idFirestore)
+                    }}
+                    
                 />
             </View>
         </SafeAreaView>

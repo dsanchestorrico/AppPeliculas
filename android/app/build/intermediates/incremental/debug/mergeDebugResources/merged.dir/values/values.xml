@@ -3058,6 +3058,15 @@
     <style name="ShapeAppearanceOverlay.TopRightDifferentCornerSize">
     <item name="cornerSizeTopRight">20px</item>
   </style>
+    <style name="ShimoAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/prompt_color</item>
+    </style>
+    <style name="ShimoEditTextStyle">
+        <item name="android:textColor">@color/prompt_color</item>
+        <item name="colorControlNormal">@color/prompt_color</item>
+        <item name="colorControlActivated">@color/prompt_color</item>
+        <item name="colorControlHighlight">@color/prompt_color</item>
+    </style>
     <style name="SpinnerDatePickerDialog" ns2:targetApi="lollipop" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:datePickerStyle">@style/SpinnerDatePickerStyle</item>
     </style>

@@ -21,16 +21,16 @@ const TabNavigator = () => {
                     let icono = '';
                     switch (route.name) {
                         case 'StackNavigator':
-                            icono = 'home-outline';
+                            icono = 'home';
                             break;
                         case 'SearchMovieScreen':
-                            icono = 'search-outline';
+                            icono = 'search';
                             break;
                         case 'MyMovieScreen':
-                            icono = 'list-outline';
+                            icono = 'list';
                             break;
                         case 'MyFavoritesMoviesScreen':
-                            icono = 'star-outline';
+                            icono = 'chatbubbles';
                             break;
                     }
                     return <Icon name={icono} size={focused ? 26 : 20} color={color} />
@@ -43,10 +43,10 @@ const TabNavigator = () => {
             activeColor="#f0edf6"
             inactiveColor="#3e2465"
         >
-            <Tab.Screen name="StackNavigator" options={{ title: "Home"}} component={StackNavigator} />
-            <Tab.Screen name="SearchMovieScreen" options={{ title: "Search"}} component={SearchMovieScreen} />
-            <Tab.Screen name="MyMovieScreen" options={{ title: "My PlayList"}} component={MyMovieScreen} />
-            <Tab.Screen name="MyFavoritesMoviesScreen" options={{ title: "My Favorites"}} component={MyFavoritesMoviesScreen} />
+            <Tab.Screen name="StackNavigator" options={{ title: "Inicio"}} component={StackNavigator} />
+            <Tab.Screen name="SearchMovieScreen" options={{ title: "Buscar"}} component={SearchMovieScreen} />
+            <Tab.Screen name="MyMovieScreen" options={{ title: "Mi lista"}} component={MyMovieScreen} />
+            <Tab.Screen name="MyFavoritesMoviesScreen" options={{ title: "Mis revisiones"}} component={MyFavoritesMoviesScreen} />
         </Tab.Navigator>
     );
 }

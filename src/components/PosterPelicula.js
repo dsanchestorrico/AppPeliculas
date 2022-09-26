@@ -8,7 +8,6 @@ const PosterPelicula = ({ item, height = 500, width = 300 }) => {
     const uri = `https://image.tmdb.org/t/p/w500${poster_path}`;
     const navigation = useNavigation();
 
-    // console.log(poster_path)
     return (
         <TouchableOpacity
             onPress = {() => {navigation.navigate('DetailScreen', {...item.item, showButton:'flex'})}}

@@ -5,18 +5,18 @@ import Carousel from 'react-native-snap-carousel';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 
 import PosterPelicula from '../components/PosterPelicula';
-import { usePelicula } from '../hooks/usePelicula';
+import { useMovie } from '../hooks/useMovie';
 import { style } from '../theme/appTheme';
 
 const { width: windowWidth } = Dimensions.get('window');
 
 export const InitialScreen = () => {
 
-    const {nowPlaying, popular, topRated, upcoming} = usePelicula();
+    const {nowPlaying, popular, topRated, upcoming} = useMovie();
 
     return (
         <ScrollView>
-            <Text style={style.titleScreen}>IS NOW PLAYING</Text>
+            <Text style={style.titleScreen}>EN CINES</Text>
             <View
                 style={{
                     height: 520
@@ -30,9 +30,9 @@ export const InitialScreen = () => {
                     itemWidth={300} />
 
             </View>
-            <HorizontalSlider titulo={'POPULAR'} peliculasEnCine = {popular}/>
-            <HorizontalSlider titulo={'TOP RATED'} peliculasEnCine = {topRated}/>
-            <HorizontalSlider titulo={'UPCOMING'} peliculasEnCine = {upcoming}/>
+            <HorizontalSlider titulo={'POPULARES'} peliculasEnCine = {popular}/>
+            <HorizontalSlider titulo={'MEJOR CALIFICADOS'} peliculasEnCine = {topRated}/>
+            <HorizontalSlider titulo={'PROXIMAMENTE'} peliculasEnCine = {upcoming}/>
 
         </ScrollView>
     )

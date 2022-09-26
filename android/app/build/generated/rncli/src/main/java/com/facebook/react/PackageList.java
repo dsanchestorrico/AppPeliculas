@@ -25,6 +25,8 @@ import com.reactnativecommunity.picker.RNCPickerPackage;
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-image-picker
 import com.imagepicker.ImagePickerPackage;
+// react-native-prompt-android
+import im.shimo.react.prompt.RNPromptPackage;
 // react-native-safe-area-context
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 // react-native-screens
@@ -83,6 +85,7 @@ public class PackageList {
       new RNCPickerPackage(),
       new RNGestureHandlerPackage(),
       new ImagePickerPackage(),
+      new RNPromptPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
       new VectorIconsPackage()

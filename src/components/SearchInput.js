@@ -1,22 +1,39 @@
 import { IconButton } from '@react-native-material/core';
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { Dimensions, StyleSheet, View } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { useSearchMovie } from '../hooks/useSearchMovie';
+import PosterPelicula from './PosterPelicula';
+import Carousel from 'react-native-snap-carousel';
+import axios from 'axios';
+
+
+const { width: windowWidth } = Dimensions.get('window');
 
 export const SearchInput = (onPressSearch) => {
     const [textValue, setTextValue] = useState('');
-    const [value, setValue] = useState('');
+    const [movies, setMovies] = useState([]);
+
+    TheMovieDB = axios.create({
+        baseURL: 'https://api.themoviedb.org/3/search',
+        params: {
+            api_key: '73177824b0458b2cf3c224bd42e51d77',
+            language: 'es-ES',
+            query: textValue
+        }
+
+    });
+
+    const getMoviesByName = async () => {
+        const response = await TheMovieDB.get('/movie');
+        setMovies(response.data.results)
+        console.log('MOVIES', movies)
+    };
 
     useEffect(() => {
-        if (value !== '')
-            onPressSearch = (value) => {};
-
-    }, [value])
-
-
-
+        if (movies.length > 0)
+            console.log('USE', movies);
+    }, [movies])
 
     return (
         <View style={styles.container}>
@@ -33,10 +50,17 @@ export const SearchInput = (onPressSearch) => {
                 <IconButton
                     icon={props => <Icon name="search-outline" {...props} />}
                     color="grey"
-                    onPress={() => { console.log(textValue); setValue(textValue); }}
+                    onPress={getMoviesByName}
                 />
             </View>
-
+            <View style={{marginTop:40}}>
+                <Carousel
+                    data={movies}
+                    renderItem={(pelicula) => <PosterPelicula item={pelicula} />}
+                    sliderWidth={windowWidth}
+                    initialNumToRender={7}
+                    itemWidth={300} />
+            </View>
         </View>
     )
 }
